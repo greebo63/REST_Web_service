@@ -72,7 +72,7 @@ namespace REST_Web_service.Controllers
                     }
                 }
             }
-            return Ok();
+            return Ok(new { });
         }
 
 
