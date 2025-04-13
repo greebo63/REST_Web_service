@@ -15,8 +15,6 @@ namespace REST_Web_service.Controllers
         //локации и площадки хранятся в словаре, где ключ - локация, а значение - список площадок
         private static Dictionary<string, List<string>> dict = new Dictionary<string, List<string>>();
 
-        public Dictionary<string, List<string>> Dict {  get { return dict; } }
-
         [HttpPost, Route("/adplatforms/refresh")]
         public async Task<IActionResult> adPlatformsRefresh([FromForm] IFormFile file = null)
         {
@@ -52,7 +50,7 @@ namespace REST_Web_service.Controllers
                     }
 
                     string adPlatformName = splitArr[0];
-                    string[] keys = splitArr[1].Split(',');
+                    string[] keys = splitArr[1].Split(',');//находим по каким ключам вставим значение рекламной площадки
                     //наполнение словаря
                     foreach (var fkey in keys)
                     {
