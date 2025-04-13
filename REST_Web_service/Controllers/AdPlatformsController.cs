@@ -4,6 +4,8 @@ using System.Linq;
 using System;
 using System.Web;
 using System.Text.RegularExpressions;
+using System.Text.Json;
+using Newtonsoft.Json;
 
 namespace REST_Web_service.Controllers
 {
@@ -11,8 +13,7 @@ namespace REST_Web_service.Controllers
     public class testController : ControllerBase
     {
         //локации и площадки хранятся в словаре, где ключ - локация, а значение - список площадок
-        public static Dictionary<string, List<string>> dict = new Dictionary<string, List<string>>();
-
+        private static Dictionary<string, List<string>> dict = new Dictionary<string, List<string>>();
 
         [HttpPost, Route("/adplatforms/refresh")]
         public async Task<IActionResult> adPlatformsRefresh([FromForm] IFormFile file = null)
@@ -49,7 +50,7 @@ namespace REST_Web_service.Controllers
                     }
 
                     string adPlatformName = splitArr[0];
-                    string[] keys = splitArr[1].Split(',');
+                    string[] keys = splitArr[1].Split(',');//находим по каким ключам вставим значение рекламной площадки
                     //наполнение словаря
                     foreach (var fkey in keys)
                     {
@@ -77,17 +78,17 @@ namespace REST_Web_service.Controllers
 
 
         [HttpGet, Route("/adplatforms/locations")]
-        public IActionResult adPlatformsInLocation([FromQuery] string loc)
+        public ActionResult adPlatformsInLocation([FromQuery] string loc)
         {
             try
             {
                 var some = new { adPlatforms = dict[loc] };
-                return Ok(some);
+                return Ok(JsonConvert.SerializeObject(some));
             }
             catch
             {
                 var some = new { adPlatforms = new List<string> { } };
-                return Ok(some);
+                return Ok(JsonConvert.SerializeObject(some));
             }
         }
     }

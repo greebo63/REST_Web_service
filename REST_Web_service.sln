@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35828.75 d17.13
+VisualStudioVersion = 17.13.35828.75
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REST_Web_service", "REST_Web_service\REST_Web_service.csproj", "{29C0A466-1294-4220-B209-3043DCFD6965}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REST_Web_service_Tests", "REST_Web_service_Tests\REST_Web_service_Tests.csproj", "{992139BB-CED7-4BC0-9277-081932BFA7B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{29C0A466-1294-4220-B209-3043DCFD6965}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29C0A466-1294-4220-B209-3043DCFD6965}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29C0A466-1294-4220-B209-3043DCFD6965}.Release|Any CPU.Build.0 = Release|Any CPU
+		{992139BB-CED7-4BC0-9277-081932BFA7B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{992139BB-CED7-4BC0-9277-081932BFA7B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{992139BB-CED7-4BC0-9277-081932BFA7B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{992139BB-CED7-4BC0-9277-081932BFA7B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
